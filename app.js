@@ -53,7 +53,7 @@ app.post("/register", async (req, res) => {
             email: user.email,
           };
 
-          const token = jwt.sign(payload, process.env.SECRET_KEY,{});
+          const token = jwt.sign(payload, process.env.SECRET_KEY, {});
 
           res.send({
             success: true,
@@ -79,6 +79,10 @@ app.post("/register", async (req, res) => {
   } catch (error) {
     res.status(500).send(error.message);
   }
+});
+
+app.get("/login", (req, res) => {
+  res.send("<h1>HI</h1>");
 });
 
 // login route
