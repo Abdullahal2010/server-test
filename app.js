@@ -22,6 +22,10 @@ app.get("/", (req, res) => {
   res.send("<h1>Welcome to the server</h1>");
 });
 
+app.get("/login", (req, res) => {
+  res.send("<h1>HI</h1>");
+});
+
 // register route
 app.post("/register", async (req, res) => {
   try {
@@ -79,10 +83,6 @@ app.post("/register", async (req, res) => {
   } catch (error) {
     res.status(500).send(error.message);
   }
-});
-
-app.get("/login", (req, res) => {
-  res.send("<h1>HI</h1>");
 });
 
 // login route
